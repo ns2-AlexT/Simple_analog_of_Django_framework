@@ -1,0 +1,1 @@
+# Simple_analog_of_Django_framework
