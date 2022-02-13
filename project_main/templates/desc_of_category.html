@@ -1,0 +1,49 @@
+{% extends 'base_template.html'%}
+{% block title %}
+<title>about us</title>
+{% endblock%}
+
+{% block style_css %}
+{% include 'style_css.html' %}
+{% endblock%}
+
+{% block common_menu %}
+{% include 'common_menu.html' %}
+{% endblock %}
+
+{% block body_block %}
+<div id="main">
+    <div id="site_content">
+        {% block common_sidebar %}
+        {% include 'common_sidebar.html' %}
+        {% endblock %}
+        <div id="content">
+            <h1>Description of the {{ category.name_of_category}}:</h1>
+            <!--            <form action="/create-category/?main=True" target="_blank">-->
+            <!--                <button type="submit">Add main directory</button>-->
+            <!--            </form>-->
+            <a href="/create-category/?main=True&cat={{category.id}}">Add main directory for
+                {{category.name_of_category}}</a>
+            {% for item_course in category.list_of_courses_in_category %}
+            <ul>
+                <ul>
+                    <li>
+                        {{item_course.name_of_course}} <a
+                            href="/copy-course/?name_of_course={{item_course.name_of_course}}">Copy
+                        of the course</a>
+                    </li>
+                </ul>
+            </ul>
+            {% endfor %}
+            <ul>
+                <ul>
+                    <li><a href="/create-course/?id={{category.id}}">Create a new course</a></li>
+                </ul>
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock%}
+{% block common_footer %}
+{% include 'common_footer.html' %}
+{% endblock%}

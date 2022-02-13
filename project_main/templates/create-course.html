@@ -1,0 +1,39 @@
+{% extends 'base_template.html'%}
+{% block title %}
+<title>about us</title>
+{% endblock%}
+
+{% block style_css %}
+{% include 'style_css.html' %}
+{% endblock%}
+
+{% block common_menu %}
+{% include 'common_menu.html' %}
+{% endblock %}
+
+{% block body_block %}
+<div id="main">
+    <div id="site_content">
+        {% block common_sidebar %}
+        {% include 'common_sidebar.html' %}
+        {% endblock %}
+        <div id="content">
+            <h1>Creating a new course</h1>
+            <h2>Current category for a new course is {{category.name_of_category}}</h2>
+            <form method="post">
+                <input type="text" name="name" placeholder="Название">
+                <label for="type_of_course" class="title">Select type of course:</label>
+                    <select name="type_of_course" id="type_of_course">
+                        <option value="online">Online</option>
+                        <option value="offline">Offline</option>
+                        <option value="record">Record</option>
+                    </select>
+                <button type="submit">Сохранить и вернуться на главную</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock%}
+{% block common_footer %}
+{% include 'common_footer.html' %}
+{% endblock%}

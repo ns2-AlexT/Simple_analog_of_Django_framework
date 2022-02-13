@@ -1,0 +1,40 @@
+{% extends 'base_template.html'%}
+{% block title %}
+<title>contacts</title>
+{% endblock%}
+
+{% block style_css %}
+{% include 'style_css.html' %}
+{% endblock%}
+
+{% block common_menu %}
+{% include 'common_menu.html' %}
+{% endblock %}
+
+{% block body_block %}
+<div id="main">
+    <div id="site_content">
+        {% block common_sidebar %}
+        {% include 'common_sidebar.html' %}
+        {% endblock %}
+        <div id="content">
+            <h1>Contact Us</h1>
+            <form action="#" method="post">
+                <div class="form_settings">
+                    <p><span>Name</span><input class="contact" type="text" name="your_name" value=""/></p>
+                    <p><span>Email Address</span><input class="contact" type="text" name="your_email" value=""/></p>
+                    <p><span>Message</span><textarea class="contact textarea" rows="8" cols="50"
+                                                     name="your_enquiry"></textarea></p>
+                    <p style="padding-top: 15px"><span>&nbsp;</span><input class="submit" type="submit"
+                                                                           name="user_request_feedback"
+                                                                           value="send"/></p>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block common_footer %}
+{% include 'common_footer.html' %}
+{% endblock%}

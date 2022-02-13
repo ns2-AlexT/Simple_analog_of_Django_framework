@@ -1,0 +1,33 @@
+{% extends 'base_template.html'%}
+{% block title %}
+<title>about us</title>
+{% endblock%}
+
+{% block style_css %}
+{% include 'style_css.html' %}
+{% endblock%}
+
+{% block common_menu %}
+{% include 'common_menu.html' %}
+{% endblock %}
+
+{% block body_block %}
+<div id="main">
+    <div id="site_content">
+        {% block common_sidebar %}
+        {% include 'common_sidebar.html' %}
+        {% endblock %}
+        <div id="content">
+            <h1>Creating a new student</h1>
+            <form method="post">
+                <input type="text" name="name" placeholder="Name of student">
+                <button type="submit">Save</button>
+            </form>
+        </div>
+        <li><a href="/list-students/">Список студентов</a></li>
+    </div>
+</div>
+{% endblock%}
+{% block common_footer %}
+{% include 'common_footer.html' %}
+{% endblock%}
