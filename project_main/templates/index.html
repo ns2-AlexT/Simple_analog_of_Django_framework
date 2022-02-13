@@ -1,0 +1,89 @@
+{% extends 'base_template.html'%}
+{% block title %}
+<title>schedule</title>
+{% endblock%}
+
+{% block style_css %}
+{% include 'style_css.html' %}
+{% endblock%}
+
+{% block common_menu %}
+{% include 'common_menu.html' %}
+{% endblock %}
+
+{% block body_block %}
+<div id="main">
+    <div id="site_content">
+        {% block common_sidebar %}
+        {% include 'common_sidebar.html' %}
+        {% endblock %}
+        <h1>Welcome to our courses</h1>
+        <table style="width: 70%;">
+            <tr>
+                <th></th>
+                <th>Monday</th>
+                <th>Tuesday</th>
+                <th>Wednesday</th>
+                <th>Thursday</th>
+                <th>Friday</th>
+            </tr>
+            <tr>
+                <th>1 class</th>
+                <td>Python<br/>Lecturer А</td>
+                <td>Swift<br/>Lecturer С</td>
+                <td>JS<br/>Lecturer В</td>
+                <td>Python<br/>Lecturer А</td>
+                <td>Swift<br/>Lecturer С</td>
+            </tr>
+            <tr>
+                <th>2 class</th>
+                <td>Python<br/>Lecturer А</td>
+                <td>Python<br/>Lecturer Б</td>
+                <td>Swift<br/>Lecturer С</td>
+                <td>Python<br/>Lecturer А</td>
+                <td>Swift<br/>Lecturer С</td>
+            </tr>
+            <tr>
+                <th>3 class</th>
+                <td>JS<br/>Lecturer В</td>
+                <td>Swift<br/>Lecturer С</td>
+                <td>Python<br/>Lecturer А</td>
+                <td>Python<br/>Lecturer А</td>
+                <td>Swift<br/>Lecturer С</td>
+            </tr>
+            <tr>
+                <th>4 class</th>
+                <td>Swift<br/>Lecturer С</td>
+                <td>Python<br/>Lecturer А</td>
+                <td>JS<br/>Lecturer В</td>
+                <td>Python<br/>Lecturer А</td>
+                <td>Swift<br/>Lecturer С</td>
+            </tr>
+        </table>
+<!--        <h2>Categories</h2>-->
+<!--        {% for item in list_of_category %}-->
+<!--            {{item.name_of_category}}-->
+<!--            <li><a href="/desc_of_category/?id={{item.id}}">Details of category</a></li>-->
+<!--            {% for item_course in item.list_of_courses_in_category %}-->
+<!--            <ul>-->
+<!--                <ul>-->
+<!--                    {{item_course.name_of_course}} <a href="/copy-course/?name_of_course={{item_course.name_of_course}}">Copy-->
+<!--                    of the course</a>-->
+<!--                </ul>-->
+<!--            </ul>-->
+<!--            {% endfor %}-->
+<!--            <ul>-->
+<!--                <ul>-->
+<!--                    <li><a href="/create-course/?id={{item.id}}">Create a new course</a></li>-->
+<!--                </ul>-->
+<!--            </ul>-->
+<!--        {% endfor %}-->
+<!--        <ul>-->
+<!--            <li><a href="/create-category/">Create a new category</a></li>-->
+<!--        </ul>-->
+    </div>
+</div>
+{% endblock%}
+{% block common_footer %}
+{% include 'common_footer.html' %}
+{% endblock%}

@@ -1,0 +1,42 @@
+{% extends 'base_template.html'%}
+{% block title %}
+<title>about us</title>
+{% endblock%}
+
+{% block style_css %}
+{% include 'style_css.html' %}
+{% endblock%}
+
+{% block common_menu %}
+{% include 'common_menu.html' %}
+{% endblock %}
+
+{% block body_block %}
+<div id="main">
+    <div id="site_content">
+        {% block common_sidebar %}
+        {% include 'common_sidebar.html' %}
+        {% endblock %}
+        <div id="content">
+            <h1>Add student to a course</h1>
+            <form method="post">
+                <select size="3" name="course_name">
+                    {% for item in list_of_courses %}
+                    <option value="{{item.name_of_course}}">{{item.name_of_course}}</option>
+                    {% endfor %}
+                </select>
+                <select size="3" name="student_name">
+                    {% for item in list_of_students %}
+                    <option value="{{item.name}}">{{item.name}}</option>
+                    {% endfor %}
+                </select>
+                <button type="submit">Save</button>
+            </form>
+        </div>
+        <li><a href="/list-students/">Список студентов</a></li>
+    </div>
+</div>
+{% endblock%}
+{% block common_footer %}
+{% include 'common_footer.html' %}
+{% endblock%}

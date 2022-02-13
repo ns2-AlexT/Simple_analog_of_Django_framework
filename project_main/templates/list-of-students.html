@@ -1,0 +1,47 @@
+{% extends 'base_template.html'%}
+{% block title %}
+<title>about us</title>
+{% endblock%}
+
+{% block style_css %}
+{% include 'style_css.html' %}
+{% endblock%}
+
+{% block common_menu %}
+{% include 'common_menu.html' %}
+{% endblock %}
+
+{% block body_block %}
+<div id="main">
+    <div id="site_content">
+        {% block common_sidebar %}
+        {% include 'common_sidebar.html' %}
+        {% endblock %}
+        <div id="content">
+            <ul>
+                <a href="/create-student/">Create a new student</a>
+            </ul>
+            <ul>
+                <a href="/add-student/">Add student to course</a>
+            </ul>
+            <ul>
+                <a href="/save-api/?type=save_students">Save all students to a json</a>
+            </ul>
+            <h1>List of students:</h1>
+            {% for idx in list_context %}
+            <li>
+                {{idx.name}} List of courses (
+                {% for idx_course in idx.list_of_courses %}
+                {{idx_course.name_of_course}},
+                {% endfor %}
+                )
+            </li>
+            {% endfor %}
+            <br>
+        </div>
+    </div>
+</div>
+{% endblock%}
+{% block common_footer %}
+{% include 'common_footer.html' %}
+{% endblock%}
